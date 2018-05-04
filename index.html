@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Train Scheduler</title>
+</head>
+
+<body>
+    <div class="jumbotron text-center"><h1>Midway Train Schedule</h1></div>
+    <div class="container">
+            <div class="row">
+                    <div class="col-md-12">
+                        <div class="card border-primary mb-3">
+                            <div class="card-header font-weight-bold">Current Train Schedule</div>
+                            <div class="card-body text-dark">
+                                <div class="row">
+                                    <div class="col-md-3 font-weight-bold">Train Name</div>
+                                    <div class="col-md-2 font-weight-bold">Destination</div>
+                                    <div class="col-md-3 font-weight-bold">Frequency (min)</div>
+                                    <div class="col-md-2 font-weight-bold">Next Arrival</div>
+                                    <div class="col-md-2 font-weight-bold">Minutes Away</div>
+                                </div> 
+                                <hr>       
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card border-primary mb-3">
+                    <div class="card-header font-weight-bold">Add Train</div>
+                    <div class="card-body text-dark">
+                        <form>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput" class="font-weight-bold">Train Name</label>
+                                <input type="text" class="form-control" id="trainName">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2" class="font-weight-bold">Destination</label>
+                                <input type="text" class="form-control" id="destination">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput" class="font-weight-bold">First Train Time (HH:mm - Military Time)</label>
+                                <input type="text" class="form-control" id="firstTrainTime">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2" class="font-weight-bold">Frequency</label>
+                                <input type="text" class="form-control" id="frequency">
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAwlQDarIxMVEHuUp0hYIun46vRQ7ecAtw",
+            authDomain: "train-scheduler-e487f.firebaseapp.com",
+            databaseURL: "https://train-scheduler-e487f.firebaseio.com",
+            projectId: "train-scheduler-e487f",
+            storageBucket: "train-scheduler-e487f.appspot.com",
+            messagingSenderId: "131163301300"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="./javascript/app.js"></script>
+</body>
+
+</html>
